@@ -15,7 +15,8 @@ type GetCreditMemoItemPartsCollectionType struct {
 	// Container for credit memo part items.
 	ItemParts []GetCreditMemoItemPartTypewithSuccess `json:"itemParts,omitempty"`
 
-	NextPage ParametersGlobalResponseNextPage `json:"nextPage,omitempty"`
+	// URL to retrieve the next page of the response if it exists; otherwise absent.
+	NextPage string `json:"nextPage,omitempty"`
 
 	// Returns `true` if the request was processed successfully.
 	Success bool `json:"success,omitempty"`

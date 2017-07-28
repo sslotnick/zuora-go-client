@@ -11,7 +11,9 @@
 package zuora
 
 type GetSubscriptionWrapper struct {
-	NextPage ParametersGlobalResponseNextPage `json:"nextPage,omitempty"`
+
+	// URL to retrieve the next page of the response if it exists; otherwise absent.
+	NextPage string `json:"nextPage,omitempty"`
 
 	// Array of subscriptions.
 	Subscriptions []GetSubscriptionType `json:"subscriptions,omitempty"`

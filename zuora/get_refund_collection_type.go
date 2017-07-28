@@ -11,7 +11,9 @@
 package zuora
 
 type GetRefundCollectionType struct {
-	NextPage ParametersGlobalResponseNextPage `json:"nextPage,omitempty"`
+
+	// URL to retrieve the next page of the response if it exists; otherwise absent.
+	NextPage string `json:"nextPage,omitempty"`
 
 	// Container for refunds.
 	Refunds []GetRefundTypewithSuccess `json:"refunds,omitempty"`

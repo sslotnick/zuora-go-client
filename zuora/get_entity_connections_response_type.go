@@ -15,7 +15,8 @@ type GetEntityConnectionsResponseType struct {
 	// Container for one or more connections that are related to the entity.
 	EntityConnections []GetEntityConnectionsArrayItemsType `json:"entityConnections,omitempty"`
 
-	NextPage ParametersGlobalResponseNextPage `json:"nextPage,omitempty"`
+	// URL to retrieve the next page of the response if it exists; otherwise absent.
+	NextPage string `json:"nextPage,omitempty"`
 
 	// Returns `true` if the request was processed successfully.
 	Success bool `json:"success,omitempty"`

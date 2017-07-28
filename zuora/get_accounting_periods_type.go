@@ -15,7 +15,8 @@ type GetAccountingPeriodsType struct {
 	// An array of all accounting periods on your tenant. The accounting periods are returned in ascending order of start date; that is, the latest period is returned first.
 	AccountingPeriods []GetAccountingPeriodWithoutSuccessType `json:"accountingPeriods,omitempty"`
 
-	NextPage ParametersGlobalResponseNextPage `json:"nextPage,omitempty"`
+	// URL to retrieve the next page of the response if it exists; otherwise absent.
+	NextPage string `json:"nextPage,omitempty"`
 
 	// Returns `true` if the request was processed successfully.
 	Success bool `json:"success,omitempty"`

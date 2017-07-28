@@ -11,7 +11,9 @@
 package zuora
 
 type GetRevenueItemsType struct {
-	NextPage ParametersGlobalResponseNextPage `json:"nextPage,omitempty"`
+
+	// URL to retrieve the next page of the response if it exists; otherwise absent.
+	NextPage string `json:"nextPage,omitempty"`
 
 	// Revenue items are listed in ascending order by the accounting period start date.
 	RevenueItems []GetRevenueItemType `json:"revenueItems,omitempty"`

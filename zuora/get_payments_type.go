@@ -11,7 +11,9 @@
 package zuora
 
 type GetPaymentsType struct {
-	NextPage ParametersGlobalResponseNextPage `json:"nextPage,omitempty"`
+
+	// URL to retrieve the next page of the response if it exists; otherwise absent.
+	NextPage string `json:"nextPage,omitempty"`
 
 	// Information about one or more payments:
 	Payments []GetPaymentType `json:"payments,omitempty"`
