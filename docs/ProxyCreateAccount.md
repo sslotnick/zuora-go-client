@@ -1,0 +1,46 @@
+# ProxyCreateAccount
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**AccountNumber** | **string** | Unique account number assigned to the account. **Character limit**: 50 **Values**: one of the following:  - null to auto-generate - a string of 50 characters or fewer that doesn&#39;t begin with the default account number prefix  | [optional] [default to null]
+**AdditionalEmailAddresses** | **string** | List of additional email addresses to receive emailed invoices. **Character limit**: 120 **Values**: comma-separated list of email addresses  | [optional] [default to null]
+**AllowInvoiceEdit** | **bool** |  Indicates if associated invoices can be edited. **Character limit**: 5 **Values**: &#x60;true&#x60;, &#x60;false&#x60; (default if left null)  | [optional] [default to null]
+**AutoPay** | **bool** |  Indicates if future payments are automatically collected when they&#39;re due during a Payment Run. **Character limit**: 5 **Values**: &#x60;true&#x60;, &#x60;false&#x60; (default)  | [optional] [default to null]
+**Balance** | **float64** | Current outstanding balance for the account. **Character limit**: 16 **Values**: automatically generated  | [default to null]
+**Batch** | **string** |  Organizes your customer accounts into groups to optimize your billing and payment operations. Required if use the Subscribe call **Character limit**: 20 **Values**:any system-defined batch (&#x60;Batch1&#x60; - &#x60;Batch50 &#x60;or by name).  | [optional] [default to null]
+**BcdSettingOption** | **string** | Billing cycle day setting option. **Character limit**: 9 **Values**: &#x60;AutoSet&#x60;, &#x60;ManualSet&#x60;  | [default to null]
+**BillCycleDay** | **int32** | Billing cycle day (BCD) on which bill runs generate invoices for the account. **Character limit**: 2 **Values**: any activated system-defined bill cycle day (&#x60;1&#x60; - &#x60;31&#x60;)  | [default to null]
+**BillToId** | **string** | ID of the person to bill for the account. **Character limit**: 32 **Values**: a valid contact ID for the account  | [optional] [default to null]
+**CommunicationProfileId** | **string** | Associates the account with a specified communication profile. **Character limit**: 32 **Values**: a valid communication profile ID  | [optional] [default to null]
+**CreditBalance** | **float64** | Total credit balance for the account. **Character limit**: 16 **Values**: automatically generated  | [default to null]
+**CrmId** | **string** | CRM account ID for the account. A CRM is a customer relationship management system, such as Salesforce.com. **Character limit**: 100 **Values**: a string of 100 characters or fewer  | [optional] [default to null]
+**Currency** | **string** |  Currency that the customer is billed in.  | [default to null]
+**CustomerServiceRepName** | **string** | Name of the account&#39;s customer service representative, if applicable. **Character limit**: 50 **Values**: a string of 50 characters or fewer  | [optional] [default to null]
+**DefaultPaymentMethodId** | **string** | ID of the default payment method for the account. This field is required if the AutoPay field is set to &#x60;true&#x60;. **Character limit**: 32 **Values**: a valid ID for an existing payment method  | [optional] [default to null]
+**InvoiceDeliveryPrefsEmail** | **bool** | Indicates if the customer wants to receive invoices through email.  **Character limit**: 5 **Values**: &#x60;true&#x60;, &#x60;false&#x60; (default if left null)  | [optional] [default to null]
+**InvoiceDeliveryPrefsPrint** | **bool** | Indicates if the customer wants to receive printed invoices, such as through postal mail. **Character limit**: 5 **Values**: &#x60;true&#x60;, &#x60;false&#x60; (default if left null)  | [optional] [default to null]
+**InvoiceTemplateId** | **string** | The ID of the invoice template. Each customer account can use a specific invoice template for invoice generation. **Character limit**: 32 **Values**: a valid template ID configured in Zuora Billing Settings  | [optional] [default to null]
+**Name** | **string** | Name of the account as displayed in the Zuora UI. **Character limit**: 255 **Values**: a string of 255 characters or fewer  | [default to null]
+**Notes** | **string** |  Comments about the account. **Character limit**: 65,535 **Values**: a string of 65,535 characters  | [optional] [default to null]
+**ParentId** | **string** | Identifier of the parent customer account for this Account object. Use this field if you have customer hierarchy enabled. **Character limit**: 32 **Values**: a valid account ID  | [optional] [default to null]
+**PaymentGateway** | **string** | Gateway used for processing electronic payments and refunds. **Character limit**: 40 **Values**: one of the following:  - a valid configured gateway name - Null to inherit the default value set in Zuora Payment Settings  | [optional] [default to null]
+**PaymentTerm** | **string** | Indicates when the customer pays for subscriptions. **Character limit**: 100 **Values**: a valid, active payment term defined in the web-based UI administrative settings  | [optional] [default to null]
+**PurchaseOrderNumber** | **string** | The number of the purchase order associated with this account. Purchase order information generally comes from customers. **Character limit**: 100 **Values**: a string of 100 characters or fewer  | [optional] [default to null]
+**SalesRepName** | **string** | The name of the sales representative associated with this account, if applicable. **Character limit**: 50 **Values**: a string of 50 characters or fewer  | [optional] [default to null]
+**SoldToId** | **string** | ID of the person who bought the subscription associated with the account. **Character limit**: 32 **Values**: a valid contact ID for the account  | [optional] [default to null]
+**Status** | **string** | Status of the account in the system. **Character limit**: 8 **Values**: one of the following:  - leave null if you&#39;re using The Subscribe call - if you&#39;re using Create: - &#x60;Draft&#x60; - &#x60;Active&#x60; - &#x60;Canceled&#x60;  | [default to null]
+**TaxCompanyCode** | **string** |  Unique code that identifies a company account in Avalara. Use this field to calculate taxes based on origin and sold-to addresses in Avalara. This feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).  **Character limit**: 50 **Values**: a valid company code  | [optional] [default to null]
+**TaxExemptCertificateID** | **string** | ID of your customer&#39;s tax exemption certificate. **Character limit**: 32 **Values**: a string of 32 characters or fewer  | [optional] [default to null]
+**TaxExemptCertificateType** | **string** | Type of the tax exemption certificate that your customer holds.  **Character limit**: 32 **Values**: a string of 32 characters or fewer  | [optional] [default to null]
+**TaxExemptDescription** | **string** | Description of the tax exemption certificate that your customer holds. **Character limit**: 500 **Values**: a string of 500 characters or fewer  | [optional] [default to null]
+**TaxExemptEffectiveDate** | [**time.Time**](time.Time.md) | Date when the the customer&#39;s tax exemption starts. **Character limit**: 29 **Version notes**: requires Zuora Tax  | [optional] [default to null]
+**TaxExemptExpirationDate** | [**time.Time**](time.Time.md) | Date when the customer&#39;s tax exemption certificate expires  **Character limit**: 29 **Version notes**: requires Zuora Tax  | [optional] [default to null]
+**TaxExemptIssuingJurisdiction** | **string** | Indicates the jurisdiction in which the customer&#39;s tax exemption certificate was issued. **Character limit**: 32 **Values**: a string of 32 characters or fewer  | [optional] [default to null]
+**TaxExemptStatus** | **string** |  Status of the account&#39;s tax exemption. Required if you use Zuora Tax. **Character limit**: 19 **Values**: one of the following:  - &#x60;Yes&#x60; - &#x60;No&#x60; - &#x60;PendingVerification&#x60;  | [optional] [default to null]
+**TotalInvoiceBalance** | **float64** | Total balance of the account&#39;s invoices. **Character limit**: 16 **Values**: a valid currency value  | [default to null]
+**VATId** | **string** |  EU Value Added Tax ID. This feature is in **Limited Availability**. If you wish to have access to the feature, submit a request at [Zuora Global Support](http://support.zuora.com/).  **Character limit**: 25 **Values**: a valid Value Added Tax ID  | [optional] [default to null]
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
