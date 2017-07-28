@@ -1,8 +1,8 @@
 language: go
 
 install:
-  - go get -d -v .
+  - go get -d -v ./zuora/...
 
 script:
-  - go build -v ./
+  - go build -v ./zuora/...
 
